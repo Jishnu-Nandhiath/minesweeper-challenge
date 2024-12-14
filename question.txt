@@ -1,0 +1,44 @@
+Competitive Minesweeper - Non-AI
+
+This is a no-AI exercise. Please do not use LLM engines, or AI code completion.
+
+This is your starting point : 
+https://github.com/ripexz/python-tkinter-minesweeper
+
+Your task is to convert it into a client-server application where two players start **on the same board** 
+and then compete who can solve the board faster.
+
+comparison between time.
+
+1. While you don't need a "player ready" UI, if only one client starts it should be impossible to play. 
+2. Timer should start when both players connected.
+3. When a player wins both players' games should be stoped with "Player A/B won". Player A is the client that connected first.
+4. Choice of protocol and library for client-server communication is up to your discretion and experience.
+
+
+
+
+let's make it only for 2 users. When 2 users are in no new user can enter. 
+
+Requirements:
+1. live communication betwen client and server.
+    a. short polling
+    b. websockets (data will be accepted from both the players, with variation on the message format.
+        will do processing based on how message format varies.)
+
+    data actually only need to be sent on each click (can also use api here, with a webhook kind of thing)
+
+    on game start, both players connect to the socket. and send data. on their format. 
+    on the tkinter, let's accept a player name field as well. that will differentiate the players. (if have time.)
+
+2. timer on the server. 
+    games are independent. Only resource shared between 2 players is the time, and win/lose condition.
+
+The game can be hosted on the frontend with a webpage. 
+
+
+3. When a player loses first, the other player automatically wins
+4. So, let's just create a seperate application. And update this one where each move is being sent to the server as well. 
+
+5. Additional things like:
+    malpractice by individual users can be identified. And 
